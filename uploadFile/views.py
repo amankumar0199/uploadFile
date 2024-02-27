@@ -12,9 +12,15 @@ import uuid
 
 # Create your views here.
 def upload(request):
+
     if request.method == 'POST':
 
         s3_client = boto3.client('s3', aws_access_key_id="AKIA6NISAVJ4JKXH3UO2", aws_secret_access_key="jszTf7SA7cL6vvlsyd8TfjzczNKkJi4MIoikptHD")
+
+
+    if request.method== 'POST':        
+        s3_client = boto3.client('s3', aws_access_key_id= "", aws_secret_access_key="")
+        
 
         img = Image.open(request.FILES.get('myfile'))
         img_byte = BytesIO()
