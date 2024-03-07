@@ -33,6 +33,8 @@ class LoginView(APIView):
         refresh = str(RefreshToken.for_user(user))
         return JsonResponse({"refresh":refresh})
 
+class tableView():
+    pass
 class UserViewSet(viewsets.ViewSet):
     # def list(self, request):
     queryset = User.objects.all()
